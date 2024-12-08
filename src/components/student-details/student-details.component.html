@@ -1,0 +1,11 @@
+ <input #Id type="number" name="id" placeholder="id">
+ <input #name id="name" type="text" name="full_name" placeholder="name">
+ <input #address type="text" name="address" placeholder="address">
+ <input #avg type="number" name="avg" placeholder="avg">
+ <input #phone type="string" name="phone" placeholder="phone">
+ <input #pay type="string" name="pay" placeholder="pay">
+ 
+<app-information></app-information>
+<button (click)="saveDetails(Id.value, name.value, address.value, avg.value, phone.value,pay.value)">save</button>
+
+

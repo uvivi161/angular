@@ -1,0 +1,34 @@
+<p>student-list works!</p>
+<ng-container *ngTemplateOutlet="myTemplate"></ng-container>
+
+
+@for(item of listOfStudent;track item){
+    <li>{{item.ID}} {{item.fName}}</li>
+    <button (click)="show(item.ID)">לעריכה</button>
+    @if(selected == item.ID){
+        <app-student-details [id]="selected" [list]="listOfStudent" (onSaveDetails)="saving($event)"></app-student-details>
+    }
+    @if(selected == item.ID && item.active == false){
+        {{item.Date}}
+    }
+    <button (click)="openCourses(item)">הצגת הקורסים</button>
+    @if (item.show) {
+        <app-course [isPaied]="item.pay"></app-course>
+    }
+
+}
+<br>
+<!-- (onSaveDetails)="saving($event)" -->
+<!-- [id]="selected" [list]="listOfStudent" -->
+
+<!-- הוספה -->
+<button (click)="add()">הוספה</button>
+@if(selected == -1){<app-student-details [id]="0" [list]="listOfStudent"></app-student-details>}
+<app-student-details [id]="0" [list]="listOfStudent" (onSaveDetails)="savingNew($event)"></app-student-details>
+
+<ng-container *ngTemplateOutlet="myTemplate"></ng-container>
+
+<!-- template -->
+<ng-template #myTemplate>
+    <h2>----------רשימת תלמידות------------</h2>
+</ng-template>

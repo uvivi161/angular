@@ -1,0 +1,15 @@
+
+@if(isPaied){
+    @for(course of courses; track course.idCourse){
+       <p colors> {{course.idCourse}} - {{course.NameCourse}}</p>
+    }
+    <div></div>
+}
+@else{
+    <div></div>
+    @for(course of courses; track course.idCourse){
+        {{course.idCourse}} - {{course.NameCourse}}
+       <div></div>
+    }
+}
+
