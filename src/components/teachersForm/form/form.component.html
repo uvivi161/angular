@@ -10,17 +10,33 @@
     
     <form (ngSubmit)="onSubmitAdd()">
         <label for="name">TeacherName:</label>
-        <input id="name" [(ngModel)]="teach.name" name="name" required>
-        <input id="classes" [(ngModel)]="teach.classes" name="classes" required>
+        <input id="name" [(ngModel)]="teach.name" name="name" #teacherName="ngModel" required minlength="3">
+        <input id="classes" [(ngModel)]="teach.classes" name="classes" #teachersClasses="ngModel" required minlength="2">
+        @if(teacherName.touched && teacherName.hasError('required')){
+            <small class="error-invalid">name is required</small>
+        }
+        @if(teacherName.hasError('minlength')){
+            <small class="error-invalid">teacherName must be at least 3 characters long.</small>
+        }
+        @if(teachersClasses.touched && teachersClasses.hasError('required')){
+            <small class="error-invalid">classes is required</small>
+        }
+        @if(teachersClasses.hasError('minlength')){
+            <small class="error-invalid">classes must be at least one class(Tow characters)</small>
+        }
         <button type="submit" >Submit</button>
     </form>
 }
 @if(isUpdate){
     <div>הכנס קוד מורה לעדכון ורשימת כיתות מעודכנת</div>
     <form (ngSubmit)="onSubmitUpdate()">
-        <label for="name">TeacherName:</label>
-        <input id="id" [(ngModel)]="teach.ID" name="id" required>
-        <input id="classes" [(ngModel)]="teach.classes" name="classes" required>
+        <label for="name">TeacherID:</label>
+        <input id="id" [(ngModel)]="teach1.ID" name="id" #teacherID="ngModel" required>
+        <input id="class" [(ngModel)]="teach1.classes" name="class" #teacherClasses1="ngModel">
+        @if(teacherID.touched && teacherID.hasError('required')){
+            <small class="error-invalid">teacher ID is required</small>
+        }
+
         <button type="submit" >Submit</button>
     </form>
 }
