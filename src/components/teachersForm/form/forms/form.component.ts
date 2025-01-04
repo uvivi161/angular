@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { TeacherService } from '../../../services/course/teacher/teacher.service';
-import { Teacher } from '../../../models/Teacher';
+import { TeacherService } from '../../../../services/course/teacher/teacher.service';
+import { Teacher } from '../../../../models/Teacher';
 import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import { UseIconPipeComponent } from "../../use-icon-pipe/use-icon-pipe.component";
+import { UseIconPipeComponent } from "../../../use-icon-pipe/use-icon-pipe.component";
 
 @Component({
   selector: 'app-form',
@@ -14,8 +14,8 @@ import { UseIconPipeComponent } from "../../use-icon-pipe/use-icon-pipe.componen
 })
 export class FormComponent {
   teachers:Teacher[] =[];
-  teach : Teacher= new Teacher(9999,"ttttttttttttt",["c1","c4"]);
-  teach1 : Teacher= new Teacher(9999,"ttttttttttttt",["c1","c4"]);
+  teach : Teacher= new Teacher(9999,"ttttttttttttt",["c1"]);
+  teach1 : Teacher= new Teacher(9999,"ttttttttttttt",["c1"]);
 
   constructor(private teacherService :TeacherService) {
     this.teachers= teacherService.getTeachers();

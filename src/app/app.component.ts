@@ -1,13 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { StudentListComponent } from "../components/student-list/student-list.component";
-import { NgTemplateOutlet } from '@angular/common';
-import { FormComponent } from "../components/teachersForm/form/form.component";
+import { CommonModule, NgTemplateOutlet } from '@angular/common';
+import { FormComponent } from "../components/teachersForm/form/forms/form.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, StudentListComponent, FormComponent],
+  imports: [RouterOutlet,
+     //StudentListComponent,
+      //FormComponent,
+      RouterLink, 
+      RouterLinkActive,
+      CommonModule,
+      //FormComponent,
+    ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,0 +1,71 @@
+<p>reactive-form works!</p>
+
+<!-- @for(teacher of teachers; track teacher.ID){
+    {{teacher.ID}},{{teacher.name}},{{teacher.classes}}
+    <div></div>
+} -->
+
+<div>
+    @for (teacher of teachers; track teacher.ID) {
+      <div>
+        <strong>{{ teacher.name }}</strong> -
+        <span>כיתות: {{ teacher.classes.join(', ') }}</span>
+      </div>
+    }
+  </div>
+  
+<br>
+<!-- <button (click)="update()">לעדכון מורה</button> -->
+<button (click)="add()">להוספת מורה</button>
+<br>
+@if(isAdd){
+    <br>
+    <div>הכנס שם של מורה להוספה  </div>
+    
+    <form (ngSubmit)="onSubmit()">
+        <label for="name">TeacherName:</label>
+        <input id="name" [(ngModel)]="teach.name" name="name" #teacherName="ngModel" required minlength="3">
+        <!-- <input id="classes" [(ngModel)]="teach.classes" name="classes" #teachersClasses="ngModel" required minlength="2"> -->
+        @if(teacherName.touched && teacherName.hasError('required')){
+            <small class="error-invalid">name is required</small>
+        }
+        @if(teacherName.hasError('minlength')){
+            <small class="error-invalid">teacherName must be at least 3 characters long.</small>
+        }
+        <!-- @if(teachersClasses.touched && teachersClasses.hasError('required')){
+            <small class="error-invalid">classes is required</small>
+        }
+        @if(teachersClasses.hasError('minlength')){
+            <small class="error-invalid">classes must be at least one class(Tow characters)</small>
+        } -->
+        <button type="submit" >Submit</button>
+    </form>
+}
+<br>
+<div>להוספת כיתה לחץ על- true</div>
+<br>
+<form [formGroup]="booleanForm">
+    <label>
+        <input type="radio" formControlName="booleanValue" [value]="true" (click)="changeAddClass(true)" /> True
+
+    </label>
+    <label>
+        <input type="radio" formControlName="booleanValue" [value]="false" (click)="changeAddClass(false)" /> False
+    </label>
+</form>
+<br>
+@if (addClass == true){
+<form [formGroup]="teachersForm" (ngSubmit)="onSubmitClass()">
+    <label for="teacherName">enter teacher name</label>
+    <input id="teacherName" formControlName="teacherName" required>
+    <label for="classes">classes:</label>
+    <input id="classes" formControlName="classes" minlength="2" maxlength="2">
+    @if (f['classes'] && f['classes'].errors && f['classes'].touched) {
+        @if(f['classes'].errors['minlength'] || f['classes'].errors['maxlength']){
+            <div>you may enter only one class</div>
+        }
+    }
+
+    <button type="submit" [disabled]="teachersForm.invalid">---ADD---</button>
+</form>
+}

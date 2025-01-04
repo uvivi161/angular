@@ -7,15 +7,20 @@ import { Teacher } from '../../../models/Teacher';
 export class TeacherService {
 
   
-  private teachers = [new Teacher(1, "chana", ["v1","v2","v5"]),
-  new Teacher(2, "chya", ["d1", "d4", "d8"]),
-  new Teacher(3, "efrat", ["a1", "a8"])
+  private teachers = [new Teacher(1, "chana",["v5"]),
+  new Teacher(2, "chya",  ["d8"]),
+  new Teacher(3, "efrat", ["a1"])
   ]
 
   index: number =  4;
   getTeachers() {
     return this.teachers;
   }
+  
+  get(name : string){
+    const t = this.teachers.find(teacher => teacher.name === name);
+    return t;
+  } 
 
   addTeacher(name: string, cl: string[]) {
     const teacher = new Teacher(this.index++,name,cl);
