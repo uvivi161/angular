@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Teacher } from '../../../../../models/Teacher';
-import { TeacherService } from '../../../../../services/course/teacher/teacher.service';
 import { log } from 'console';
+import { TeacherService } from '../../../../../services/teacher/teacher.service';
 
 @Component({
   selector: 'app-reactive-form',

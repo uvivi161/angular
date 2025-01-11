@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { TeacherService } from '../../../../services/course/teacher/teacher.service';
+//import { TeacherService } from '../../../../services/course/teacher/teacher.service';
 import { Teacher } from '../../../../models/Teacher';
 import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { UseIconPipeComponent } from "../../../use-icon-pipe/use-icon-pipe.component";
+import { TeacherService } from '../../../../services/teacher/teacher.service';
 
 @Component({
   selector: 'app-form',

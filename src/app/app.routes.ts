@@ -8,6 +8,7 @@ import { StudentListComponent } from '../components/student-list/student-list.co
 import { MenuComponent } from '../components/menu/menu.component';
 import { FormComponent } from '../components/teachersForm/form/forms/form.component';
 import { ReactiveFormComponent } from '../components/teachersForm/form/reactiveForm/reactive-form/reactive-form.component';
+import { ShowCoursesComponent } from '../components/show-courses/show-courses.component';
 
 export const routes: Routes = [
     {path: '', component:MenuComponent},
@@ -19,6 +20,7 @@ export const routes: Routes = [
     {path: 'student-list', component:StudentListComponent},
     {path: 'teachersForm', component:FormComponent},
     {path: 'teachersReactiveForm', component:ReactiveFormComponent},
+    {path: 'show-courses', component:ShowCoursesComponent},
 
 
 

@@ -6,9 +6,9 @@ import { Course, subject } from '../../models/Course';
 })
 export class CourseService {
 
-  private courses = [new Course("1","EasyMath",subject.teacher),
-    new Course ("2", "3Point",subject.designin),
-    new Course ("3", "Hi-Tec",subject.computerPrograming)
+  private courses = [new Course("1","EasyMath",subject.teacher,["analiza", "graph", "function"],1),
+    new Course ("2", "3Point",subject.designin,["1Point", "2Point", "3Point"],3),
+    new Course ("3", "Hi-Tec",subject.computerPrograming,["c++", "angular", "react", "java","LLM","pythons"],4)
   ]
   
   getCourses(){
