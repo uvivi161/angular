@@ -1,0 +1,7 @@
+
+@for(u of (userService.users$ | async); track u.id){
+    {{u | json}}
+}
+@empty {
+    <div>אנחנו עובדים בשבילך🤩🤩</div>
+}

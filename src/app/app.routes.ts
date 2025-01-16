@@ -9,6 +9,7 @@ import { MenuComponent } from '../components/menu/menu.component';
 import { FormComponent } from '../components/teachersForm/form/forms/form.component';
 import { ReactiveFormComponent } from '../components/teachersForm/form/reactiveForm/reactive-form/reactive-form.component';
 import { ShowCoursesComponent } from '../components/show-courses/show-courses.component';
+import { DotNetComponent } from '../components/dot-net/dot-net.component';
 
 export const routes: Routes = [
     {path: '', component:MenuComponent},
@@ -21,6 +22,7 @@ export const routes: Routes = [
     {path: 'teachersForm', component:FormComponent},
     {path: 'teachersReactiveForm', component:ReactiveFormComponent},
     {path: 'show-courses', component:ShowCoursesComponent},
+    {path: 'dotNet', component:DotNetComponent}
 
 
 

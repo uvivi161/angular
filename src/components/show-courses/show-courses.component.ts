@@ -6,26 +6,26 @@ import { MatButtonModule } from '@angular/material/button';
 import { Course } from '../../models/Course';
 import { CourseService } from '../../services/course/course.service';
 
-interface FoodNode {
-  name: string;
-  children?: FoodNode[];
-}
+// interface FoodNode {
+//   name: string;
+//   children?: FoodNode[];
+// }
 
-const TREE_DATA: FoodNode[] = [
-  {
-    name: 'Math',
-    children: [{ name: 'Analize' }, { name: 'Graph' }, { name: 'X/Y' }],
-  },
-  {
-    name: 'Hi-Tec',
-    children: [
-      {
-        name: 'C#',
-        children: [{ name: 'C#-mahat' }, { name: 'C#' }],
-      },
-    ],
-  },
-];
+// const TREE_DATA: FoodNode[] = [
+//   {
+//     name: 'Math',
+//     children: [{ name: 'Analize' }, { name: 'Graph' }, { name: 'X/Y' }],
+//   },
+//   {
+//     name: 'Hi-Tec',
+//     children: [
+//       {
+//         name: 'C#',
+//         children: [{ name: 'C#-mahat' }, { name: 'C#' }],
+//       },
+//     ],
+//   },
+// ];
 
 interface ExampleFlatNode {
   expandable: boolean;
